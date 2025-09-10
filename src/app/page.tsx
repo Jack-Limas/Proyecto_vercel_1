@@ -210,7 +210,9 @@ export default function NewsCardsDashboard() {
 }
 
 /* --- ICONS (manuales, sin instalar nada) --- */
-function BaseIcon(props: React.SVGProps<SVGSVGElement>) {
+type BaseIconProps = React.SVGProps<SVGSVGElement>;
+
+function BaseIcon(props: BaseIconProps) {
   return (
     <svg
       viewBox="0 0 24 24"
