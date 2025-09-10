@@ -209,10 +209,10 @@ export default function NewsCardsDashboard() {
   );
 }
 
-/* --- ICONS (manuales, sin instalar nada) --- */
+/* --- ICONOS (manuales, sin instalar nada) --- */
 type BaseIconProps = React.SVGProps<SVGSVGElement>;
 
-function BaseIcon(props: BaseIconProps) {
+function BaseIcon({ children, ...props }: BaseIconProps & { children?: React.ReactNode }) {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -222,9 +222,12 @@ function BaseIcon(props: BaseIconProps) {
       strokeLinecap="round"
       strokeLinejoin="round"
       {...props}
-    />
+    >
+      {children}
+    </svg>
   );
 }
+
 function SearchIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <BaseIcon {...props}>
@@ -233,6 +236,7 @@ function SearchIcon(props: React.SVGProps<SVGSVGElement>) {
     </BaseIcon>
   );
 }
+
 function BookmarkIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <BaseIcon {...props}>
@@ -240,6 +244,7 @@ function BookmarkIcon(props: React.SVGProps<SVGSVGElement>) {
     </BaseIcon>
   );
 }
+
 function ChevronLeftIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <BaseIcon {...props}>
@@ -247,6 +252,7 @@ function ChevronLeftIcon(props: React.SVGProps<SVGSVGElement>) {
     </BaseIcon>
   );
 }
+
 function ChevronRightIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <BaseIcon {...props}>
@@ -254,6 +260,7 @@ function ChevronRightIcon(props: React.SVGProps<SVGSVGElement>) {
     </BaseIcon>
   );
 }
+
 function GlobeIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <BaseIcon {...props}>
@@ -263,6 +270,7 @@ function GlobeIcon(props: React.SVGProps<SVGSVGElement>) {
     </BaseIcon>
   );
 }
+
 function BriefcaseIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <BaseIcon {...props}>
@@ -271,6 +279,7 @@ function BriefcaseIcon(props: React.SVGProps<SVGSVGElement>) {
     </BaseIcon>
   );
 }
+
 function ClapperboardIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <BaseIcon {...props}>
@@ -279,7 +288,8 @@ function ClapperboardIcon(props: React.SVGProps<SVGSVGElement>) {
     </BaseIcon>
   );
 }
-function MedalIcon(props: React.SVGProps<SVGSVGElement >) {
+
+function MedalIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <BaseIcon {...props}>
       <circle cx="12" cy="8" r="4" />
@@ -287,6 +297,7 @@ function MedalIcon(props: React.SVGProps<SVGSVGElement >) {
     </BaseIcon>
   );
 }
+
 function HeartIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <BaseIcon {...props}>
