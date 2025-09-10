@@ -1,5 +1,3 @@
-import { JSX, SVGProps } from "react";
-
 export default function NewsCardsDashboard() {
   const categories = [
     { name: "Global", icon: GlobeIcon },
@@ -122,7 +120,7 @@ export default function NewsCardsDashboard() {
               </div>
             </article>
 
-            {/* Profile + Stats (subido arriba) */}
+            {/* Profile + Stats */}
             <article className="col-span-12 sm:col-span-6 bg-white rounded-2xl shadow-sm border border-slate-100 p-5 flex items-center gap-6">
               <img
                 src="https://i.pinimg.com/200x/e9/32/91/e93291c42fb2a9fe730f859a7ff38109.jpg"
@@ -154,7 +152,7 @@ export default function NewsCardsDashboard() {
               </div>
             </article>
 
-            {/* Arrows + Tags (subido arriba) */}
+            {/* Arrows + Tags */}
             <section className="col-span-12 sm:col-span-6 flex flex-col gap-4">
               <div className="flex items-center justify-end gap-3">
                 <button className="w-14 h-14 rounded-full bg-white shadow-sm border border-slate-200 grid place-content-center hover:scale-105 transition">
@@ -209,9 +207,12 @@ export default function NewsCardsDashboard() {
   );
 }
 
-/* --- ICONOS (manuales, sin instalar nada) --- */
-/* --- ICONOS (manuales, sin instalar nada) --- */
-type BaseIconProps = React.SVGProps<SVGSVGElement> & { children?: React.ReactNode };
+// --- ICONS FIXED ---
+type IconProps = React.SVGProps<SVGSVGElement>;
+
+type BaseIconProps = IconProps & {
+  children?: React.ReactNode;
+};
 
 function BaseIcon({ children, ...props }: BaseIconProps) {
   return (
@@ -229,8 +230,7 @@ function BaseIcon({ children, ...props }: BaseIconProps) {
   );
 }
 
-
-function SearchIcon(props: React.SVGProps<SVGSVGElement>) {
+function SearchIcon(props: IconProps) {
   return (
     <BaseIcon {...props}>
       <circle cx="11" cy="11" r="8" />
@@ -239,7 +239,7 @@ function SearchIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-function BookmarkIcon(props: React.SVGProps<SVGSVGElement>) {
+function BookmarkIcon(props: IconProps) {
   return (
     <BaseIcon {...props}>
       <path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z" />
@@ -247,7 +247,7 @@ function BookmarkIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-function ChevronLeftIcon(props: React.SVGProps<SVGSVGElement>) {
+function ChevronLeftIcon(props: IconProps) {
   return (
     <BaseIcon {...props}>
       <polyline points="15 18 9 12 15 6" />
@@ -255,7 +255,7 @@ function ChevronLeftIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-function ChevronRightIcon(props: React.SVGProps<SVGSVGElement>) {
+function ChevronRightIcon(props: IconProps) {
   return (
     <BaseIcon {...props}>
       <polyline points="9 18 15 12 9 6" />
@@ -263,7 +263,7 @@ function ChevronRightIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-function GlobeIcon(props: React.SVGProps<SVGSVGElement>) {
+function GlobeIcon(props: IconProps) {
   return (
     <BaseIcon {...props}>
       <circle cx="12" cy="12" r="10" />
@@ -273,7 +273,7 @@ function GlobeIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-function BriefcaseIcon(props: React.SVGProps<SVGSVGElement>) {
+function BriefcaseIcon(props: IconProps) {
   return (
     <BaseIcon {...props}>
       <rect x="2" y="7" width="20" height="14" rx="2" />
@@ -282,7 +282,7 @@ function BriefcaseIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-function ClapperboardIcon(props: React.SVGProps<SVGSVGElement>) {
+function ClapperboardIcon(props: IconProps) {
   return (
     <BaseIcon {...props}>
       <rect x="2" y="7" width="20" height="13" rx="2" />
@@ -291,7 +291,7 @@ function ClapperboardIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-function MedalIcon(props: React.SVGProps<SVGSVGElement>) {
+function MedalIcon(props: IconProps) {
   return (
     <BaseIcon {...props}>
       <circle cx="12" cy="8" r="4" />
@@ -300,10 +300,10 @@ function MedalIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-function HeartIcon(props: React.SVGProps<SVGSVGElement>) {
+function HeartIcon(props: IconProps) {
   return (
     <BaseIcon {...props}>
-      <path d="M20.8 6.6a5.5 5.5 0 00-7.8 0L12 7.6l-1-1a5.5 5.5 0 10-7.8 7.8l1 1L12 22l7.8-6.6l1-1a5.5 5.5 0 000-7.8z" />
-    </BaseIcon>
+      <path d="M20.8 6.6a5.5 5.5 0 00-7.8 0L12 7.6l" />
+  </BaseIcon>
   );
 }
